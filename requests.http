@@ -1,0 +1,39 @@
+### Invoke Recipe Function - Simple case
+GET  http://localhost:7071/api/Recipe/ HTTP/1.1
+content-type: application/json
+
+{
+    "recipetype": "Turkey",
+    "weight": "26",
+    "unit": "lb"
+}
+
+### Invoke Recipe Function - With weight conversion
+GET  http://localhost:7071/api/Recipe/ HTTP/1.1
+content-type: application/json
+
+{
+    "recipetype": "Turkey",
+    "weight": "3.7",
+    "unit": "kg"
+}
+
+### Invoke Recipe Function - With wrong input parameters
+GET  http://localhost:7071/api/Recipe/ HTTP/1.1
+content-type: application/json
+
+{
+    "recipetype": "Ham",
+    "weight": "-3.7",
+    "unit": "lbs"
+}
+
+### Invoke Metadata Function - Get valid units
+GET  http://localhost:7071/api/Metadata/Unit HTTP/1.1
+
+### Invoke Metadata Function - Get valid units
+GET  http://localhost:7071/api/Metadata/Recipe HTTP/1.1
+
+### Invoke Metadata Function - Do not provide parameter
+GET  http://localhost:7071/api/Metadata HTTP/1.1
+
